@@ -1,0 +1,199 @@
+/* Import elegant Google Fonts: Playfair Display for headers, Lora for body */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+/* Define Colors for Easy Changes (Rose Gold / Deep Charcoal Theme) */
+:root {
+    --color-primary: #B8860B; /* Rose Gold / Dark Goldenrod */
+    --color-secondary: #4F4F4F; /* Deep Charcoal for text */
+    --color-background: #F8F8F8; /* Light Off-White */
+    --color-white: #FFFFFF;
+}
+
+/* General Styling & Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif; /* Elegant Body Font */
+    line-height: 1.7;
+    color: var(--color-secondary);
+    background-color: var(--color-background);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Elegant Header Font */
+    color: var(--color-primary); 
+    margin-bottom: 0.5em;
+    font-weight: 700;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #E0E0E0;
+    width: 80%;
+    margin: 40px auto;
+}
+
+/* 1. HERO SECTION (Background Photo) */
+.hero-section {
+    height: 100vh;
+    background-image: url('../assets/images/hero-background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Creates a parallax scroll effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Overlay for text readability */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Slightly darker overlay for better contrast */
+    z-index: -1;
+}
+
+.hero-section h1 {
+    font-size: 5em; /* Larger Header */
+    color: var(--color-white);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.9);
+    letter-spacing: 5px; /* Wider spacing */
+}
+
+.hero-section h2, .date-text {
+    font-size: 2em; /* Larger Subtitle */
+    color: var(--color-white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-weight: 400;
+}
+
+
+/* General Section Styling */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* 2. COUNTDOWN STYLING */
+#countdown-section {
+    background-color: var(--color-white);
+    padding-bottom: 50px;
+}
+
+#countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 3vw; /* Responsive gap */
+    margin: 20px 0 10px;
+    font-weight: 700;
+    font-size: 4em; /* Larger numbers */
+    color: var(--color-primary); 
+    letter-spacing: -2px;
+}
+
+#countdown-timer small {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 0.25em; /* Smaller relative text */
+    font-weight: normal;
+    color: var(--color-secondary);
+    margin-top: -15px;
+}
+
+/* 3. AGENDA STYLING */
+.agenda-container {
+    display: flex;
+    justify-content: center; /* Changed from space-around */
+    flex-wrap: wrap;
+    margin-top: 30px;
+    gap: 20px; /* Gap between items */
+}
+
+.agenda-item {
+    flex-basis: 30%;
+    min-width: 280px;
+    padding: 25px;
+    margin: 10px;
+    border-left: 4px solid var(--color-primary); /* Thicker highlight border */
+    background-color: #fcfcfc;
+    text-align: left;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Soft shadow */
+}
+
+.agenda-item p {
+    color: #666;
+    font-size: 0.95em;
+}
+
+/* 4. LOCATION & MAP STYLING (Uses .map-container for iframe) */
+.map-container {
+    height: 400px; 
+    width: 100%;
+    max-width: 700px;
+    margin: 30px auto;
+    border: 8px solid var(--color-white);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Elevated feel */
+}
+
+/* Ensure the iframe fills the container */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.map-link {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 12px 25px; /* Larger button */
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+    font-family: 'Playfair Display', serif; /* Header font on button */
+    margin-top: 20px;
+}
+
+.map-link:hover {
+    background-color: #A07A0A;
+}
+
+/* FOOTER */
+footer {
+    padding: 30px 20px; /* More padding */
+    background-color: var(--color-secondary); /* Deep Charcoal footer */
+    color: #DDD;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) { /* Changed from 600px for better tablet handling */
+    .hero-section h1 {
+        font-size: 3em;
+    }
+
+    #countdown-timer {
+        gap: 20px;
+        font-size: 2.5em;
+    }
+
+    .agenda-item {
+        flex-basis: 90%;
+        margin-bottom: 20px;
+    }
+}
