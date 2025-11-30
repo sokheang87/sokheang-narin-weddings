@@ -1,5 +1,5 @@
 /* Import elegant Google Fonts: Playfair Display for headers, Lora for body */
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3885.7962111815277!2d103.20784257507884!3d13.112092787216339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA2JzQzLjUiTiAxMDPCsDEyJzM3LjUiRQ!5e0!3m2!1sen!2skh!4v1764512155074!5m2!1sen!2skh');
 
 /* Define Colors for Easy Changes (Rose Gold / Deep Charcoal Theme) */
 :root {
@@ -196,4 +196,5 @@ footer {
         flex-basis: 90%;
         margin-bottom: 20px;
     }
+
 }
